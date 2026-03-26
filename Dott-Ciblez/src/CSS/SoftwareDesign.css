@@ -1,0 +1,395 @@
+/* ========================================
+   SOFTWARE DESIGN PAGE - PREMIUM DARK UI 
+   ======================================== */
+
+.sd-page-wrapper {
+  background: #040931;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Ambient Orbs & Grid */
+.sd-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+.sd-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(35, 61, 254, 0.15);
+  top: -100px;
+  left: -150px;
+}
+.sd-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 229, 255, 0.1);
+  top: 40%;
+  right: -100px;
+}
+.sd-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Components */
+.sd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.sd-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #00e5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+.sd-gradient-text {
+  background: linear-gradient(135deg, #4f7bff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sd-gradient-text-alt {
+  background: linear-gradient(135deg, #00e5ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sd-btn-primary {
+  background: #233dfe;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(35, 61, 254, 0.2);
+}
+.sd-btn-primary:hover {
+  background: #00e5ff;
+  color: #000;
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
+  transform: translateY(-2px);
+}
+.sd-btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.sd-btn-outline:hover {
+  border-color: #00e5ff;
+  color: #00e5ff;
+}
+
+/* HERO SECTION */
+.sd-hero {
+  position: relative;
+  padding-top: 60px;
+  z-index: 2;
+}
+.sd-display-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.sd-hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Hero Visuals */
+.sd-hero-visual {
+  position: relative;
+  height: 500px;
+}
+.sd-glass-card {
+  background: rgba(15, 15, 20, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+.sd-hero-card-1 {
+  width: 320px;
+  top: 10%;
+  left: 10%;
+  z-index: 2;
+}
+.sd-card-header .sd-card-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.sd-card-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+.sd-skeleton-line {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.sd-hero-card-2 {
+  width: 260px;
+  bottom: 20%;
+  right: 5%;
+  z-index: 3;
+  text-align: center;
+  border-color: rgba(0, 229, 255, 0.3);
+}
+.sd-icon-glow {
+  font-size: 40px;
+  color: #00e5ff;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.sd-hero-card-2 h5 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.sd-hero-card-2 p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* STATS SECTION */
+.sd-stats-section {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+.sd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .sd-stats-grid { grid-template-columns: repeat(2, 1fr); padding: 40px 0; }
+}
+.sd-stat-box {
+  padding: 40px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sd-stat-box:last-child {
+  border-right: none;
+}
+.sd-stat-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+}
+.sd-stat-label {
+  color: #00e5ff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* SERVICES SECTION */
+.sd-services-section {
+  position: relative;
+  z-index: 2;
+}
+.sd-section-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+}
+.sd-service-card {
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 30px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+.sd-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 229, 255, 0.1);
+}
+.sd-service-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(35, 61, 254, 0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #00e5ff;
+  margin-bottom: 24px;
+}
+.sd-service-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.sd-service-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* PROCESS SECTION */
+.sd-process-section {
+  position: relative;
+  z-index: 2;
+}
+.sd-process-intro {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+.sd-tool-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(5px);
+}
+.sd-timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid rgba(35, 61, 254, 0.3);
+}
+.sd-timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.sd-timeline-item:last-child {
+  margin-bottom: 0;
+}
+.sd-timeline-number {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  background: #000;
+  border: 2px solid #233dfe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e5ff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sd-timeline-content {
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+}
+.sd-timeline-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 229, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e5ff;
+  font-size: 18px;
+}
+.sd-timeline-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.sd-timeline-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* CTA SECTION */
+.sd-cta-section {
+  position: relative;
+  z-index: 2;
+}
+.sd-cta-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(35, 61, 254, 0.1), rgba(0, 229, 255, 0.05));
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 30px;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+.sd-cta-blur-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(35, 61, 254, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.sd-cta-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+}
+.sd-cta-desc {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  line-height: 1.6;
+}
+.sd-btn-large {
+  padding: 16px 40px;
+  font-size: 18px;
+}

@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ========================================
+   MODERN CONTACT PAGE CSS
+   ======================================== */
+.cnt-page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #040d2b;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ── Background & Overlays ── */
+.cnt-grid-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse at top right, black 0%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, transparent 80%);
+    pointer-events: none;
+}
+
+.cnt-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.4;
+    animation: cntOrbFloat 12s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+.cnt-orb-blue {
+    width: 60vw;
+    height: 60vw;
+    top: -20%;
+    left: -10%;
+    background: radial-gradient(circle, #233dfe 0%, transparent 70%);
+}
+
+.cnt-orb-cyan {
+    width: 40vw;
+    height: 40vw;
+    bottom: 20%;
+    right: -10%;
+    background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
+    animation-delay: -4s;
+}
+
+@keyframes cntOrbFloat {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translateY(40px) scale(1.1); }
+}
+
+/* ── Info Column (Left) ── */
+.cnt-premium-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    background: rgba(35, 61, 254, 0.1);
+    border: 1px solid rgba(35, 61, 254, 0.3);
+    border-radius: 100px;
+    color: #00e5ff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+}
+
+.cnt-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.cnt-text-gradient {
+    background: linear-gradient(135deg, #00e5ff 0%, #233dfe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.3));
+}
+
+.cnt-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.cnt-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cnt-info-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cnt-info-card:hover {
+    background: rgba(35, 61, 254, 0.05);
+    border-color: rgba(35, 61, 254, 0.3);
+    transform: translateX(10px);
+}
+
+.cnt-info-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(35, 61, 254, 0.1);
+    color: #00e5ff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    border: 1px solid rgba(35, 61, 254, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cnt-info-card:hover .cnt-info-icon {
+    background: #233dfe;
+    color: #ffffff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.cnt-info-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #ffffff;
+}
+
+.cnt-info-sub {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 2px 0;
+}
+
+.cnt-info-email {
+    font-size: 14px;
+    color: #00e5ff;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ── Form Container (Right) ── */
+.cnt-form-container {
+    background: rgba(10, 10, 15, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 50px 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.cnt-form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(35, 61, 254, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+    filter: blur(40px);
+    z-index: 0;
+}
+
+.cnt-form-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+.cnt-form-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.cnt-form-subheading {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Floating Input Group */
+.cnt-form {
+    position: relative;
+    z-index: 1;
+}
+
+.cnt-input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.cnt-input-group input,
+.cnt-input-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 20px 20px 10px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.cnt-input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cnt-input-group label {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform-origin: left top;
+}
+
+.cnt-input-group input:focus,
+.cnt-input-group textarea:focus {
+    border-color: #00e5ff;
+    background: rgba(35, 61, 254, 0.05);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+.cnt-input-group input:focus ~ label,
+.cnt-input-group input:valid ~ label,
+.cnt-input-group textarea:focus ~ label,
+.cnt-input-group textarea:valid ~ label {
+    transform: translateY(-10px) scale(0.8);
+    color: #00e5ff;
+}
+
+/* Submit Button */
+.cnt-submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: #233dfe;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(35, 61, 254, 0.3);
+}
+
+.cnt-submit-btn:hover {
+    background: #00e5ff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.4);
+}
+
+.cnt-submit-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.cnt-submit-btn.sent {
+    background: #10b981;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.cnt-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: cntSpin 1s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes cntSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Map Section ── */
+.cnt-map-section {
+    padding: 100px 0;
+    background: #000000;
+}
+
+.cnt-map-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px 20px 0 0;
+    padding: 30px 40px;
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 20;
+}
+
+.cnt-map-info h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.cnt-map-info p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 6px 0;
+}
+
+.cnt-map-timezone {
+    font-size: 13px;
+    color: #00e5ff;
+    font-weight: 500;
+}
+
+.cnt-custom-dropdown {
+    position: relative;
+    z-index: 100;
+}
+
+.cnt-dropdown-toggle {
+    padding: 16px 24px;
+    background: #233dfe;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(35, 61, 254, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cnt-dropdown-toggle:hover {
+    background: #1a2fc9;
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.cnt-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 12px;
+    width: 250px;
+    background: rgba(10, 10, 15, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 0;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cnt-dropdown-menu li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cnt-dropdown-menu li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cnt-dropdown-menu li.active {
+    background: rgba(35, 61, 254, 0.1);
+    border-left: 3px solid #00e5ff;
+}
+
+.dropdown-flag {
+    font-size: 20px;
+}
+
+.dropdown-details strong {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.dropdown-details span {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+.cnt-iframe-container {
+    width: 100%;
+    height: 500px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+}
+
+.cnt-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: invert(90%) hue-rotate(180deg) contrast(80%) brightness(110%);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .cnt-form-container {
+        padding: 40px 30px;
+    }
+    .cnt-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cnt-hero-section .row {
+        gap: 40px !important;
+    }
+    .cnt-map-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+    }
+    .cnt-custom-dropdown, 
+    .cnt-dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .cnt-dropdown-menu {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .cnt-title {
+        font-size: 2.5rem;
+    }
+    .cnt-form-container {
+        padding: 30px 20px;
+    }
+}

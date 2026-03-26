@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ========================================
+   MODERN BANNER CSS
+   ======================================== */
+.dtt-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    background-color: #000000;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Background & Overlays ── */
+.dtt-banner-background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.dtt-banner-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.dtt-banner-grid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+}
+
+.dtt-banner-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #000000 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ── Glowing Orbs ── */
+.dtt-banner-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 2;
+    opacity: 0.6;
+    animation: dttOrbFloat 15s infinite alternate ease-in-out;
+    pointer-events: none;
+    transition: background 1.5s ease;
+}
+
+.dtt-orb-1 {
+    width: 50vw;
+    height: 50vw;
+    top: -10%;
+    right: -10%;
+}
+
+.dtt-orb-2 {
+    width: 40vw;
+    height: 40vw;
+    bottom: -10%;
+    left: 10%;
+    animation-delay: -5s;
+}
+
+@keyframes dttOrbFloat {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-30px, 30px) scale(1.1); }
+}
+
+/* ── Content Elements ── */
+.dtt-banner-content {
+    position: relative;
+    z-index: 10;
+    padding-right: 40px;
+}
+
+.dtt-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.dtt-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #00e5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e5ff;
+    animation: dttPulse 2s infinite;
+}
+
+@keyframes dttPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.2); }
+}
+
+.dtt-banner-slide-icon {
+    color: #00e5ff;
+    font-size: 16px;
+}
+
+.dtt-banner-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.dtt-banner-description {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+/* ── Buttons ── */
+.dtt-banner-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dtt-btn-primary {
+    padding: 16px 32px;
+    background: #233dfe;
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(35, 61, 254, 0.4);
+}
+
+.dtt-btn-primary:hover {
+    background: #00e5ff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.4);
+}
+
+.dtt-btn-outline {
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dtt-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00e5ff;
+    transform: translateY(-2px);
+}
+
+/* ── Controls ── */
+.dtt-banner-controls {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.dtt-slider-arrows {
+    display: flex;
+    gap: 12px;
+}
+
+.dtt-arrow-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.dtt-arrow-btn:hover {
+    background: #233dfe;
+    border-color: #233dfe;
+    transform: scale(1.1);
+}
+
+.dtt-slider-dots {
+    display: flex;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 16px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dtt-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.dtt-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.dtt-dot-active-bg {
+    position: absolute;
+    inset: -3px;
+    background: #00e5ff;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .dtt-banner-title {
+        font-size: 3.5rem;
+    }
+    .dtt-banner-controls {
+        bottom: 40px;
+        right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dtt-banner-content {
+        padding-right: 0;
+        text-align: center;
+    }
+    .dtt-banner-buttons {
+        justify-content: center;
+    }
+    .dtt-banner-controls {
+        bottom: 30px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        align-items: center;
+    }
+    .dtt-banner-title {
+        font-size: 2.5rem;
+    }
+}

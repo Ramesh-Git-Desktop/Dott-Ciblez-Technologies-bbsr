@@ -1,0 +1,752 @@
+/* ====================================================
+   IT & NETWORK SERVICES - PREMIUM DARK UI
+   ==================================================== */
+
+ .itns-services-page {
+  background: #050b3c;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar globally for a cleaner premium look */
+.itns-services-page::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+.itns-services-page {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* ================= AMBIENT ELEMENTS ================= */
+.itns-hero-particles .itns-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00e5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00e5ff;
+  animation: itnsFloatUp 15s infinite linear;
+  opacity: 0.6;
+}
+.itns-particle-1 { top: 80%; left: 10%; animation-duration: 20s; }
+.itns-particle-2 { top: 90%; left: 30%; animation-duration: 15s; width: 6px; height: 6px; }
+.itns-particle-3 { top: 70%; left: 60%; animation-duration: 25s; }
+.itns-particle-4 { top: 85%; left: 80%; animation-duration: 18s; width: 3px; height: 3px; }
+
+@keyframes itnsFloatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-1000px) scale(0.5); opacity: 0; }
+}
+
+.itns-hero-orbs .itns-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  pointer-events: none;
+}
+.itns-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: rgba(35, 61, 254, 0.15);
+  top: -200px;
+  left: -200px;
+}
+.itns-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 229, 255, 0.12);
+  top: 30%;
+  right: -250px;
+}
+.itns-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.1);
+  bottom: -100px;
+  left: 20%;
+}
+
+.itns-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= TYPOGRAPHY & BUTTONS ================= */
+.itns-gradient-text {
+  background: linear-gradient(135deg, #4f7bff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.itns-btn-primary {
+  background: #233dfe;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(35, 61, 254, 0.2);
+  display: inline-flex;
+  align-items: center;
+}
+.itns-btn-primary:hover {
+  background: #00e5ff;
+  color: #000;
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.itns-btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.itns-btn-outline:hover {
+  border-color: #00e5ff;
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.itns-section-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.itns-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.itns-section-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================= HERO SECTION ================= */
+.itns-hero-section {
+  position: relative;
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 2;
+  max-width: 100%;
+}
+
+.itns-premium-badge-wrapper {
+  margin-bottom: 24px;
+}
+.itns-premium-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(35, 61, 254, 0.15);
+  border: 1px solid rgba(35, 61, 254, 0.3);
+  color: #4f7bff;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.itns-hero-title {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+.itns-hero-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 550px;
+}
+
+.itns-hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.itns-trust-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+.itns-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+.itns-trust-item i {
+  color: #00e5ff;
+  font-size: 18px;
+}
+
+/* Hero Image Visualization */
+.itns-hero-image-container {
+  position: relative;
+  padding: 40px;
+}
+.itns-image-wrapper {
+  position: relative;
+  border-radius: 30px;
+  background: rgba(17, 17, 17, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0px 20px rgba(71, 230, 247, 0.5);
+}
+.itns-image-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(35, 61, 254, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.itns-hero-main-img {
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  animation: itnsFloat 6s ease-in-out infinite;
+}
+
+@keyframes itnsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.itns-float-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(15, 15, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #00e5ff;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.itns-float-icon-1 { top: 10%; left: -20px; animation: itnsFloatIcon 4s infinite 0.5s; color: #10b981; }
+.itns-float-icon-2 { bottom: 20%; right: -20px; animation: itnsFloatIcon 5s infinite 1.5s; color: #3b5bff; }
+.itns-float-icon-3 { top: 40%; right: 10%; animation: itnsFloatIcon 4.5s infinite 0s; color: #f59e0b; }
+
+@keyframes itnsFloatIcon {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* ================= STATS SECTION ================= */
+.itns-stats-section {
+  padding: 60px 0;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.itns-stat-modern-card {
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.itns-stat-modern-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.itns-stat-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.itns-stat-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+}
+.itns-stat-content {
+  position: relative;
+  z-index: 2;
+}
+.itns-stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.itns-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ================= SERVICES SECTION ================= */
+.itns-services-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+.itns-service-modern-card {
+  position: relative;
+  background: rgba(20, 20, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+.itns-service-modern-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.itns-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.itns-service-card-inner {
+  padding: 40px 30px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.itns-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.itns-service-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.itns-service-number {
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+  line-height: 1;
+}
+.itns-service-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.itns-service-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+.itns-service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+.itns-service-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+}
+.itns-service-features i {
+  font-size: 16px;
+}
+.itns-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+.itns-service-link:hover {
+  gap: 12px;
+}
+
+/* ================= METHODOLOGY SECTION ================= */
+.itns-process-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 10, 15, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.itns-process-modern {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 60px;
+}
+.itns-process-modern-step {
+  flex: 1;
+  position: relative;
+  padding: 30px;
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.itns-process-modern-step:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+.itns-process-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.itns-process-number-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.itns-process-step-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.itns-process-step-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+.itns-process-arrow {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: #233dfe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(35, 61, 254, 0.5);
+}
+@media (max-width: 992px) {
+  .itns-process-modern { flex-direction: column; }
+  .itns-process-arrow { display: none; }
+  .itns-process-number-badge { top: auto; bottom: 20px; right: 20px; }
+}
+
+/* ================= PARTNERS SECTION ================= */
+.itns-partners-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+.itns-partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.itns-partner-grid-item {
+  flex: 0 0 auto;
+}
+.itns-partner-modern-card {
+  width: 140px;
+  height: 90px;
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 15px;
+  filter: grayscale(100%) opacity(0.6);
+}
+.itns-partner-modern-card:hover {
+  filter: grayscale(0%) opacity(1);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.itns-partner-modern-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.itns-partner-hover {
+  display: none;
+}
+
+/* ================= DEPLOYMENTS SECTION ================= */
+.itns-deployments-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 10, 15, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.itns-deployment-modern-card {
+  background: rgba(20, 20, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+.itns-deployment-modern-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(35, 61, 254, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+.itns-deployment-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.itns-deployment-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(0.8);
+}
+.itns-deployment-modern-card:hover .itns-deployment-image-wrapper img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+.itns-deployment-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.itns-enterprise-badge { background: #3b5bff; }
+.itns-tech-badge { background: #10b981; }
+.itns-bpo-badge { background: #f59e0b; }
+
+.itns-deployment-content {
+  padding: 30px;
+}
+.itns-deployment-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.itns-deployment-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+.itns-deployment-stats {
+  margin-bottom: 24px;
+}
+.itns-deployment-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+.itns-deployment-stat i {
+  color: #00e5ff;
+}
+.itns-deployment-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4f7bff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+.itns-deployment-link:hover {
+  gap: 12px;
+  color: #00e5ff;
+}
+
+/* ================= FINAL CTA SECTION ================= */
+.itns-final-cta {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+.itns-cta-modern-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(35, 61, 254, 0.2), rgba(0, 229, 255, 0.1));
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 30px;
+  padding: 80px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+.itns-cta-content {
+  position: relative;
+  z-index: 3;
+}
+.itns-cta-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+}
+.itns-cta-modern-card h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.itns-cta-modern-card p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+.itns-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 576px) {
+  .itns-cta-buttons { flex-direction: column; }
+}
+.itns-btn-large {
+  padding: 16px 40px;
+  font-size: 16px;
+}
+.itns-btn-light {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.itns-btn-light:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.itns-cta-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 1;
+  opacity: 0.5;
+}
+.itns-cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 60%);
+  z-index: 2;
+  pointer-events: none;
+}
